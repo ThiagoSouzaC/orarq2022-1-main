@@ -19,7 +19,7 @@ int main(int argc, char**argv)
 	FILE *f;
 	Endereco e;
 	int qt;
-	int c;
+	int c = 0;
 
 	if(argc != 2)
 	{
@@ -27,18 +27,16 @@ int main(int argc, char**argv)
 		return 1;
 	}
 
-	c = 0;
-
 	f = fopen("cep_ordenado.dat","rb");
 
 	fseek(f, 0, SEEK_END);
-	long tam_byte = ftell(f);
-	long tam_reg = tam_byte/sizeof(Endereco);
+	long tamByte = ftell(f);
+	long tamReg = tamByte/sizeof(Endereco);
 
 	int inicio = 0;
-	int fim = tam_reg - 1;
+	int fim = tamReg - 1;
 
-	while(inicio <= fim){
+	while(inicio <= fim) {
 		int meio = (inicio + fim)/2;
 
 		fseek(f, meio*sizeof(Endereco), SEEK_SET);
@@ -46,11 +44,10 @@ int main(int argc, char**argv)
 
 		int comparacao = strncmp(argv[1], e.cep, 8);
 
-		if(comparacao == 0){
+		if(comparacao == 0) {
 			printf("%.8s", e.cep);= 
 		}
-
-		if(comparacao < 0){
+		if(comparacao < 0) {
 			fim = meio - 1;
 		} else {
 			inicio = meio + 1;
