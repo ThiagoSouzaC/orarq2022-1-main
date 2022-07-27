@@ -9,4 +9,5 @@ Arquivo cep.dat: https://www.dropbox.com/sh/8i46wy3q0rmasu7/AADC-JJVGJSOwX_uS0aq
 
 # Segunda tarefa 
 ## Merge sort (externo)
+Compilar primeiro o código "merge_sort_externo" depois o "merge_sort_intercala".
 
