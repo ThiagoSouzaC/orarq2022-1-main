@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define N 4
+#define N 8
 
 #pragma pack(1)
 
@@ -77,7 +77,6 @@ int main(int argc, char** argv){
 		remove(nomeArquivo);
 		remove(nomeArquivo2);
 	}
-	// printf("retorno: %d\n", remove("./Cep__Intercalado.dat"));
 
 	printf("FIM");
 }
